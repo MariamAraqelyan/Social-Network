@@ -8,7 +8,18 @@
     </label>
     <label class="social-control-label mb32">
         Password
-        <input formControlName="password" type="text" placeholder="Password" class="social-input">
+        <div class="password-input">
+            <input 
+                formControlName="password" 
+                [type]="isPasswordVisible() ? 'text' : 'password'"
+                placeholder="Password" class="social-input">
+            <button
+                (click)="isPasswordVisible.set(!isPasswordVisible())"
+                class="password-eye-btn">
+                i
+            </button>
+        </div>
+        
     </label>
 
     <button class="btn" type="submit">Login</button>

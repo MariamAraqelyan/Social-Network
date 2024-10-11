@@ -5,3 +5,22 @@
     align-items: center;
     margin: 0 10%;
 }
+
+.login-form {
+    width: 440px;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-eye-btn {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    background: red;
+    border: none;
+    width: 10px;
+}
