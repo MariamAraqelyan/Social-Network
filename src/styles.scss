@@ -17,6 +17,7 @@
 }
 
 body {
+    height: 100dvh;
     background-color: var(--dark-color);
     color: var(--light-color);
 }
@@ -43,6 +44,12 @@ body {
     font-size: 14px;
     line-height: 24px;
     cursor: pointer;
+}
+
+.h4 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 800; 
 }
 
 .h6 {

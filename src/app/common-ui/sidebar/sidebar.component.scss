@@ -1,3 +1,9 @@
+:host{
+    display: block;
+    padding: 20px 12px;
+    position: relative;
+}
+
 .main-menu-list {
     list-style: none;
 }
@@ -38,9 +44,16 @@
 }
 
 .sidebar-footer {
+    position: absolute;
+    bottom: 20px;
     background: var(--dark-hover-color);
     border-radius: 2px;
     padding: 0.4rem 1rem;
     display: grid;
     grid-template-columns: 2rem 1fr 1rem;
+    grid-gap: 0.8rem;
+
+    .username-text {
+        color: var(--primary-color);
+    }
 }

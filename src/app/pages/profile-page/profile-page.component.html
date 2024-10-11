@@ -1,1 +1,42 @@
-<p>profile-page works!</p>
+@if(profile$ | async; as profile) {
+    <header class="profile-page__header">
+        <app-profile-header
+            [profile] = "profile"
+        ></app-profile-header>
+        <a class="btn to-settings-btn" [routerLink]="['/settings']">Redirect</a>
+    </header>
+
+    <main class="profile-page__body">
+        <div></div>
+
+        <div class="subscribers-wrapper">
+            <h3 class="h6 mb16">Followers</h3>
+        
+            @for(subscriber of subscribers$ | async; track subscriber.id) {
+                <div class="subscribers-avatar-btn" [routerLink]="['/profile', subscriber.id]">
+                    <img [src]="subscriber.avatarUrl | imgUrl"/>
+                </div>
+            }
+
+            <a class="to-subscribers-search" [routerLink]="['/search']">
+
+            </a>
+
+
+            <h3 class="h6">Skills</h3>
+
+            @for(skill of profile.stack; track skill) {
+                <div class="skill-tag">
+                    {{skill}}
+                </div>
+            }
+
+            <h3 class="h6">About As</h3>
+
+            <div class="regular">
+                {{profile.description}}
+            </div>
+
+        </div>
+    </main>
+}
