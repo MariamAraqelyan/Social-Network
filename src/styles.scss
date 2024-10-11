@@ -1,3 +1,5 @@
+@import "./margin.scss";
+
 :root {
     --dark-color: #000;
     --light-color: #fff;
@@ -30,6 +32,7 @@ body {
 }
 
 .btn {
+    width: 100%;
     border: none;
     background: var(--primary-color);
     color: var(--dark-color);
@@ -37,6 +40,7 @@ body {
     font-weight: 700;
     font-size: 14px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .h6 {
@@ -48,4 +52,23 @@ body {
 .subtitle {
     font-size: 14px;
     line-height: 20px;
+}
+
+.social-control-label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+}
+
+.social-input {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--light-color);
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
 }

@@ -1,1 +1,15 @@
-<p>login-page works!</p>
+<form (ngSubmit)="onSubmit($event)"
+    class="login-form" [formGroup]="form">
+    <h1 class="h1 mb60">Login</h1>
+    <label class="social-control-label mb16">
+        UserName
+        <input formControlName="username"
+        type="text" placeholder="Login" class="social-input">
+    </label>
+    <label class="social-control-label mb32">
+        Password
+        <input formControlName="password" type="text" placeholder="Password" class="social-input">
+    </label>
+
+    <button class="btn" type="submit">Login</button>
+</form>
