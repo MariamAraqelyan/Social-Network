@@ -1,1 +1,42 @@
-<p>sidebar works!</p>
+<img src="" class="mb16 ml16">
+
+<nav class="mb20">
+    <ul class="main-menu-list">
+        @for(menuItem of menuItems; track menuItem.id) {
+            <li>
+                <a class="menu-item" [routerLink]="menuItem.url">
+                        <span>{{menuItem.label}}</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+
+<div class="medium-text mb20">
+    Followers
+</div>
+
+@for(profile of subscribers$ | async; track profile.id) {
+    <app-subscriber-card
+        [profile]="profile"
+    ></app-subscriber-card>
+}
+
+<div class="mt20 to-subscribers">
+    <a [routerLink]="['/subscribers']" class="to-subscribers__link medium-text">
+        All Followers
+    </a>
+</div>
+
+<footer class="sidebar-footer">
+    @if(me(); as me) {
+        @if(me.avatarUrl) {
+            <img 
+                [src] = "me.avatarUrl | imgUrl"
+                alt=""
+            />
+        }@else {
+            <!-- <img src="/assets/"/> -->
+        }
+    }
+</footer>

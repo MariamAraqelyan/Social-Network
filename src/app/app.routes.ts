@@ -19,7 +19,7 @@ export const routes: Routes = [
                 component: ProfilePageComponent
             }
         ],
-        canActivate: [canActivateAuth]
+        // canActivate: [canActivateAuth]
     },
     {
         path: 'login',

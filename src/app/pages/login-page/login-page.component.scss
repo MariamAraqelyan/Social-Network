@@ -20,7 +20,10 @@
     right: 12px;
     cursor: pointer;
     transform: translateY(-50%);
-    background: red;
     border: none;
     width: 10px;
+
+    &.active {
+        background: var(--primary-color);
+    }
 }

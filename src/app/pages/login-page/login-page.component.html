@@ -15,6 +15,7 @@
                 placeholder="Password" class="social-input">
             <button
                 (click)="isPasswordVisible.set(!isPasswordVisible())"
+                [class.active]="isPasswordVisible()"
                 class="password-eye-btn">
                 i
             </button>
