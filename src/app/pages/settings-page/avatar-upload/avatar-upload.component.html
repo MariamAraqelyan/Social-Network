@@ -1,0 +1,18 @@
+<div
+    dnd
+    class="dropzone"
+    (keyup.enter)="fileDrop.click()"
+    (fileDrop)="onFileDroped($event)">
+    <div class="dropzone__content">
+        <div class="medium-text">Upload</div>
+    </div>
+</div>
+
+<input
+    tabindex="-1"
+  class="avatar-input"
+  type="file"
+  [(ngModel)]="avatar"
+  #fileDrop
+  (change)="fileBrowserHandler($event)"
+/>

@@ -1,0 +1,47 @@
+<!-- 
+<app-profile-header
+[profile] = "profile"
+></app-profile-header> -->
+
+<form class="profile-form-wrapper" [formGroup]="form">
+    <div class="profile-form">
+        <div class="two-columns">
+            <label class="social-form-label">
+                <span class="social-form-label__text">FirstName</span>
+                <input type="text" formControlName="firstName" class="social-form-input"/>
+            </label>
+
+            <label class="social-form-label">
+                <span class="social-form-label__text">LastName</span>
+                <input type="text" formControlName="lastName" class="social-form-input"/>
+            </label>
+        </div>
+        
+        <label class="social-form-label">
+            <span class="social-form-label__text">Username</span>
+            <input type="text" formControlName="userName" class="social-form-input"/>
+        </label>
+
+        <label class="social-form-label">
+            <span class="social-form-label__text">About me</span>
+            <textarea 
+                rows="4"
+                class="social-form-input social-texterea"
+                formControlName="description"></textarea>
+        </label>
+
+        <label class="social-form-label">
+            <span class="social-form-label__text">Avatar</span>
+            <app-avatar-upload></app-avatar-upload>
+        </label>
+
+        <label class="social-form-label">
+            <span class="social-form-label__text">Skiils</span>
+            <input type="text" formControlName="stack" class="social-form-input"/>
+        </label>
+
+    </div>
+    <div>
+        <button class="btn" (click)="onSave()">Save</button>
+    </div>
+</form>
