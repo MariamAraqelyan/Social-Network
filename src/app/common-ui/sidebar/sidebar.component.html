@@ -4,8 +4,11 @@
     <ul class="main-menu-list">
         @for(menuItem of menuItems; track menuItem.id) {
             <li>
-                <a class="menu-item" [routerLink]="menuItem.url">
-                        <span>{{menuItem.label}}</span>
+                <a class="menu-item" 
+                    [routerLink]="menuItem.url"
+                    routerLinkActive="active"
+                >
+                    <span>{{menuItem.label}}</span>
                 </a>
             </li>
         }

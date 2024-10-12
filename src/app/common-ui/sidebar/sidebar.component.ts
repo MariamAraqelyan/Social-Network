@@ -1,6 +1,6 @@
 import { AsyncPipe, JsonPipe, NgForOf } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../data/services/profile.service';
@@ -11,6 +11,7 @@ import { firstValueFrom } from 'rxjs';
   standalone: true,
   imports: [
     RouterLink,
+    RouterLinkActive,
     NgForOf,
     ImgUrlPipe,
     SubscriberCardComponent,

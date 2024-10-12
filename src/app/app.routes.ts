@@ -13,7 +13,8 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component: SearchPageComponent
+                redirectTo: 'profile/me',
+                pathMatch: 'full'
             },
             {
                 path: 'profile/:id',
@@ -22,9 +23,13 @@ export const routes: Routes = [
             {
                 path: 'settings',
                 component: SettingsPageComponent
-            }
+            },
+            {
+                path: 'search',
+                component: SearchPageComponent
+            },
         ],
-        // canActivate: [canActivateAuth]
+        canActivate: [canActivateAuth]
     },
     {
         path: 'login',

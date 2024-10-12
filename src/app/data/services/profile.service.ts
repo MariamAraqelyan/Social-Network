@@ -14,7 +14,8 @@ export class ProfileService {
   baseApiUrl: string = environment.apiUrl;
 
   // me!: Profile;
-  me = signal<Profile | null>(null)
+  me = signal<Profile | null>(null);
+  filteredProfiles = signal<Profile[]>([]);
 
   getTestAccount(): Observable<Profile[]> {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
@@ -47,5 +48,13 @@ export class ProfileService {
     fd.append('image', file);
 
     return this.http.post<Profile>(`${this.baseApiUrl}account/upload_image`, fd);
+  }
+
+  filterProfiles(params: Record<string, any>) {
+    return this.http.get<Pageble<Profile>>(`${this.baseApiUrl}account/accounts`, {
+      params
+    }).pipe(
+      tap(res => this.filteredProfiles.set(res.items))
+    )
   }
 }

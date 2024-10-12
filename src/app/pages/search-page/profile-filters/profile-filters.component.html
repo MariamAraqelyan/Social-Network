@@ -1,0 +1,20 @@
+<form class="profile-form-wrapper" [formGroup]="searchForm">
+    <div class="profile-form">
+        <div class="two-columns">
+            <label class="social-form-label">
+                <span class="social-form-label__text">FirstName</span>
+                <input type="text" formControlName="firstName" class="social-form-input"/>
+            </label>
+
+            <label class="social-form-label">
+                <span class="social-form-label__text">LastName</span>
+                <input type="text" formControlName="lastName" class="social-form-input"/>
+            </label>
+
+            <label class="social-form-label">
+                <span class="social-form-label__text">Skills</span>
+                <input type="text" formControlName="stack" class="social-form-input"/>
+            </label>
+        </div>
+    </div>
+</form>
